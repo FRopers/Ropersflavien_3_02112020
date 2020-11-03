@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$color_primary: #9356dc;
+$color_secondary: #ff79da;
+$color_tertiary: #99e2d0;
+$baground_color_primary: #fff;
+$baground_color_secondary: #f6f6f6;
+$baground_color_tertiary: #eaeaea;
+$baground_color_quaternary: #353535;
+$baground_color_txt: #fff;
+
+@mixin background_btn {
+  background: linear-gradient($color_secondary, $color_primary);
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin new {
+  height: 15%;
+  width: 80px;
+  background-color: $color_tertiary;
+  color: darken($color_tertiary, 40%);
+  font-weight: bold;
+  margin: 15px 15px 0 0;
+  border-radius: 3px;
+}
+@mixin image_vignette($variable) {
+  height: 70%;
+  display: flex;
+  justify-content: flex-end;
+  background: $variable no-repeat center;
+  background-size: cover;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 1px solid gray;
+}
+.logo,
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+h3 {
+  margin-bottom: 5px;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  @include center;
+  padding: 20px 0 10px 0;
+}
+
+.localisation {
+  @include center;
+  background-color: $baground_color_tertiary;
+  padding: 10px 0;
+  & div {
+    display: flex;
+    align-items: center;
+    width: 196px; /*acceptable ?*/
+  }
+  & i {
+    margin-right: 20px;
+  }
+}
+
+.reserve {
+  @include center;
+  flex-direction: column;
+  background-color: $baground_color_secondary;
+  padding: 30px 0 50px;
+  & h2 {
+    text-align: center;
+    width: 65%;
+  }
+  & p {
+    margin-bottom: 25px;
+    text-align: center;
+    width: 85%;
+  }
+  & a {
+    @include center;
+    color: $baground_color_txt;
+    @include background_btn;
+    height: 45px;
+    width: 200px;
+    border-radius: 22px;
+  }
+}
+
+.menu {
+  padding: 40px 15px;
+  & li {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: $baground_color_secondary;
+  }
+  &__numero {
+    @include center;
+    background-color: $color_primary;
+    color: $baground_color_txt;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin-left: -10px;
+  }
+  & i {
+    margin: 0 20px;
+    color: $baground_color_quaternary;
+    width: 18px;
+  }
+  &__phone {
+    font-size: 1.3em;
+  }
+}
+.resto {
+  padding: 40px 15px;
+  background-color: $baground_color_secondary;
+  &__vignette {
+    height: 250px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  &__img_palette {
+    @include image_vignette(url(../images/restaurants/la_palette_du_gout.jpg));
+    & p {
+      @include center;
+      @include new;
+    }
+  }
+  &__img_enchantee {
+    @include image_vignette(url(../images/restaurants/la_note_enchantee.jpg));
+    & p {
+      @include center;
+      @include new;
+    }
+  }
+  &__img_francaise {
+    @include image_vignette(url(../images/restaurants/a_la_francaise.jpg));
+  }
+  &__img_delice {
+    @include image_vignette(url(../images/restaurants/le_delice_des_sens.jpg));
+  }
+  &__descriptif {
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px 0px 12px;
+    background-color: $baground_color_primary;
+    & i {
+      font-size: 1.8em;
+    }
+  }
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $baground_color_quaternary;
+    padding: 20px 15px;
+    & *{
+        color: $baground_color_txt;
+        padding-bottom: 5px;
+    }
+    & .logo{
+        font-weight: normal;/*verifé*/
+        padding-bottom: 15px;;
+    }
+    & i{
+        width:20px;
+        margin-right: 5px;
+    }
+}
