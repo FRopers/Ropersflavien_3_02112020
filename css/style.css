@@ -5,7 +5,6 @@
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  border: 1px solid gray;
 }
 
 .logo,
@@ -27,6 +26,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.fa-heart {
+  font-size: 1.8em;
 }
 
 header {
@@ -71,28 +74,40 @@ header {
   width: 85%;
 }
 .reserve a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
   background: linear-gradient(#ff79da, #9356dc);
   height: 45px;
   width: 200px;
   border-radius: 22px;
+  color: #fff;
+  box-shadow: 0 0 10px #7e7e7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu {
+.nav {
   padding: 40px 15px;
 }
-.menu li {
+.nav__liste {
+  box-shadow: 0 0 10px #7e7e7e;
   display: flex;
   align-items: center;
   height: 60px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  border-radius: 15px;
   background-color: #f6f6f6;
 }
-.menu__numero {
+.nav__liste p {
+  font-weight: bold;
+}
+.nav__liste:hover {
+  background-color: #f2eafb;
+}
+.nav__liste:hover i {
+  color: #9356dc;
+}
+.nav__numero {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,12 +118,12 @@ header {
   border-radius: 20px;
   margin-left: -10px;
 }
-.menu i {
+.nav i {
   margin: 0 20px;
-  color: #353535;
+  color: #7e7e7e;
   width: 18px;
 }
-.menu__phone {
+.nav__phone {
   font-size: 1.3em;
 }
 
@@ -117,6 +132,7 @@ header {
   background-color: #f6f6f6;
 }
 .resto__vignette {
+  box-shadow: 0 0 10px #7e7e7e;
   height: 250px;
   margin-bottom: 15px;
   overflow: hidden;
@@ -181,9 +197,6 @@ header {
   padding: 12px 20px 0px 12px;
   background-color: #fff;
 }
-.resto__descriptif i {
-  font-size: 1.8em;
-}
 
 footer {
   display: flex;
@@ -203,6 +216,43 @@ footer .logo {
 footer i {
   width: 20px;
   margin-right: 5px;
+}
+
+/*page menu*/
+.fond--francaise {
+  height: 250px;
+  background: url(../images/restaurants/a_la_francaise.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  border-radius: 30px 30px 0 0;
+  margin-top: -40px;
+  padding: 20px 15px;
+}
+.menu__titre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__titre i {
+  margin-right: 10px;
+}
+.menu__commander {
+  display: flex;
+  justify-content: center;
+}
+.menu__commander--btn {
+  background: linear-gradient(#ff79da, #9356dc);
+  height: 45px;
+  width: 175px;
+  border-radius: 22px;
+  color: #fff;
+  box-shadow: 0 0 10px #7e7e7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

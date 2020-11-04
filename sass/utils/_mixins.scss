@@ -1,0 +1,38 @@
+@mixin shadow {
+  box-shadow: 0 0 10px #7e7e7e;
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin new {
+  height: 15%;
+  width: 80px;
+  background-color: $color_tertiary;
+  color: darken($color_tertiary, 40%);
+  font-weight: bold;
+  margin: 15px 15px 0 0;
+  border-radius: 3px;
+}
+@mixin image_vignette($variable) {
+  height: 70%;
+  display: flex;
+  justify-content: flex-end;
+  background: $variable no-repeat center;
+  background-size: cover;
+}
+@mixin image_page ($variable) {
+  height: 250px;
+  background: $variable no-repeat center;
+  background-size: cover;
+}
+@mixin btn_primary ($variable) {
+  background: linear-gradient($color_secondary, $color_primary);
+  height: 45px;
+  width: $variable;
+  border-radius: 22px;
+  color: $baground_color_txt;
+  @include shadow;
+  @include center;
+}
