@@ -7,6 +7,7 @@
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+ /*border: 1px solid #cecece;*/
 }
 .logo,
 h1 {
@@ -23,31 +24,50 @@ ul {
 }
 a {
   text-decoration: none;
+  color: black;
 }
-.fa-heart{
+.fa-heart {
   font-size: 1.8em;
+}
+.arrow {
+  font-size: 1.3em;
 }
 header {
   @include center;
-  padding: 20px 0 10px 0;
+  justify-content: space-between;
+  height: 60px;
+  & a,
+  div {
+    @include center;
+    height: 100%;
+    width: 60px;
+  }
 }
 .localisation {
-  @include center;
-  background-color: $baground_color_tertiary;
-  padding: 10px 0;
-  & div {
-    display: flex;
-    align-items: center;
-    width: 196px; /*acceptable ?*/
+  background-color: $background_color_tertiary;
+  width: 100%;
+  overflow: hidden;
+  &__ombrage{
+    height: 0.1px;
+    @include shadow (4px);
   }
-  & i {
-    margin-right: 20px;
+  &__information {
+    @include center;
+    padding: 10px 0;
+    & div {
+      display: flex;
+      align-items: center;
+      width: 196px;
+    }
+    & i {
+      margin-right: 20px;
+    }
   }
 }
 .reserve {
   @include center;
   flex-direction: column;
-  background-color: $baground_color_secondary;
+  background-color: $background_color_secondary;
   padding: 30px 0 50px;
   & h2 {
     text-align: center;
@@ -59,35 +79,28 @@ header {
     width: 85%;
   }
   & a {
-    @include btn_primary (200px);
-
+    @include btn_primary(200px);
   }
 }
 .nav {
   padding: 40px 15px;
   &__liste {
-    @include shadow;
-    display: flex;
-    align-items: center;
-    height: 60px;
+    @include btn_secondary($background_color_secondary);
     margin-left: 10px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-    background-color: $baground_color_secondary;
     & p {
       font-weight: bold;
     }
     &:hover {
       background-color: lighten($color_primary, 35%);
-      & i{
-      color: $color_primary;
+      & i {
+        color: $color_primary;
       }
     }
   }
   &__numero {
     @include center;
     background-color: $color_primary;
-    color: $baground_color_txt;
+    color: $background_color_txt;
     height: 20px;
     width: 20px;
     border-radius: 20px;
@@ -95,7 +108,7 @@ header {
   }
   & i {
     margin: 0 20px;
-    color: $baground_color_icone_nav;
+    color: $background_color_icone_nav;
     width: 18px;
   }
   &__phone {
@@ -104,9 +117,9 @@ header {
 }
 .resto {
   padding: 40px 15px;
-  background-color: $baground_color_secondary;
+  background-color: $background_color_secondary;
   &__vignette {
-    @include shadow;
+    @include shadow (10px);
     height: 250px;
     margin-bottom: 15px;
     overflow: hidden;
@@ -137,16 +150,16 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 12px 20px 0px 12px;
-    background-color: $baground_color_primary;
+    background-color: $background_color_primary;
   }
 }
 footer {
   display: flex;
   flex-direction: column;
-  background-color: $baground_color_quaternary;
+  background-color: $background_color_quaternary;
   padding: 20px 15px;
   & * {
-    color: $baground_color_txt;
+    color: $background_color_txt;
     padding-bottom: 5px;
   }
   & .logo {
@@ -159,29 +172,55 @@ footer {
   }
 }
 /*page menu*/
-.fond{
-  &--francaise{
-    @include image_page (url(../images/restaurants/a_la_francaise.jpg))
+.fond {
+  &--francaise {
+    @include image_page(url(../images/restaurants/a_la_francaise.jpg));
   }
 }
-.menu{
-  background-color: $baground_color_secondary;
+.menu {
+  background-color: $background_color_secondary;
   border-radius: 30px 30px 0 0;
   margin-top: -40px;
-  padding: 20px 15px;
-  &__titre{
+  padding: 30px 15px;
+  &__titre {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    & i{
-      margin-right: 10px;
+    & i {
+      margin-right: 22px;
     }
   }
-  &__commander{
+  & h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 35px 0 5px 0;
+  }
+  &__underline {
+    height: 3px;
+    width: 45px;
+    margin-bottom: 20px;
+    background-color: $color_tertiary;
+  }
+  &__choix {
+    @include btn_secondary($background_color_primary);
+    justify-content: space-between;
+    padding: 9px 20px 9px 9px;
+    &--prix {
+      display: flex;
+      align-items: flex-end;
+      height: 80%;
+      & p {
+        font-weight: bold;
+      }
+    }
+  }
+  &__commander {
     display: flex;
     justify-content: center;
-    &--btn{
-      @include btn_primary (175px);
+    margin: 50px 0;
+    &--btn {
+      @include btn_primary(175px);
+      border: none;
     }
   }
 }

@@ -1,5 +1,5 @@
-@mixin shadow {
-  box-shadow: 0 0 10px #7e7e7e;
+@mixin shadow ($variable){
+  box-shadow: 0 0 $variable #7e7e7e;
 }
 @mixin center {
   display: flex;
@@ -32,7 +32,16 @@
   height: 45px;
   width: $variable;
   border-radius: 22px;
-  color: $baground_color_txt;
-  @include shadow;
+  color: $background_color_txt;
+  @include shadow (10px);
   @include center;
+}
+@mixin btn_secondary ($variable) {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background-color: $variable;
+  @include shadow (10px);
 }
