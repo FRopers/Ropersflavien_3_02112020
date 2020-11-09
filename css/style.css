@@ -9,11 +9,30 @@
     transform: scale(1);
   }
 }
+@keyframes coulisse {
+  0% {
+    transform: translateX(25px);
+    width: 20px;
+  }
+  100% {
+    transform: translateX(0px);
+    width: 60px;
+  }
+}
+@keyframes valider {
+  0% {
+    transform: rotate(-1turn);
+  }
+  100% {
+    transform: rotate(0turn);
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  /*border: 1px solid #cecece;*/
+  font-size: 1em;
+  border: 1px solid #cecece;
 }
 
 .logo,
@@ -21,7 +40,12 @@ h1 {
   font-family: "Shrikhand", cursive;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 h2 {
+  font-size: 1.2em;
   margin-bottom: 15px;
 }
 
@@ -154,6 +178,8 @@ header div {
 }
 
 .resto {
+  display: flex;
+  flex-direction: column;
   padding: 40px 15px;
   background-color: #f6f6f6;
 }
@@ -266,7 +292,7 @@ footer i {
   justify-content: space-between;
 }
 .menu__titre .heart {
-  margin-right: 22px;
+  margin-right: 28px;
 }
 .menu h2 {
   font-size: 1.1em;
@@ -278,25 +304,6 @@ footer i {
   width: 45px;
   margin-bottom: 20px;
   background-color: #99e2d0;
-}
-.menu__choix {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 0 10px #7e7e7e;
-  justify-content: space-between;
-  padding: 9px 20px 9px 9px;
-}
-.menu__choix--prix {
-  display: flex;
-  align-items: flex-end;
-  height: 80%;
-}
-.menu__choix--prix p {
-  font-weight: bold;
 }
 .menu__commander {
   display: flex;
@@ -314,6 +321,57 @@ footer i {
   justify-content: center;
   align-items: center;
   border: none;
+}
+
+.assiette {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #7e7e7e;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.assiette__choix {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+}
+.assiette__choix--rogner {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.assiette__choix--prix {
+  display: flex;
+  align-items: flex-end;
+}
+.assiette__choix--prix p {
+  font-weight: bold;
+}
+.assiette__valider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 100%;
+  background-color: #99e2d0;
+  transform: translateX(25px);
+}
+.assiette__valider i {
+  color: white;
+  font-size: 1.5em;
+}
+.assiette:hover .assiette__valider {
+  animation: coulisse 750ms;
+  animation-fill-mode: both;
+}
+.assiette:hover i {
+  animation: valider 750ms 75ms;
+  animation-fill-mode: both;
 }
 
 /*animation*/
