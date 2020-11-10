@@ -8,14 +8,14 @@
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 1em;
-  border: 1px solid #cecece;
+  font-size: 0.99em;
+  /*border: 1px solid #cecece;*/
 }
 .logo,
 h1 {
   font-family: "Shrikhand", cursive;
 }
-h1{
+h1 {
   font-size: 1.5em;
 }
 h2 {
@@ -32,8 +32,12 @@ a {
   text-decoration: none;
   color: black;
 }
+
 .arrow {
   font-size: 1.3em;
+}
+input{
+  outline: none;
 }
 header {
   @include center;
@@ -83,13 +87,38 @@ header {
   }
   & a {
     @include btn_primary(200px);
+    &:hover{
+      @include hover_btn;
+    }
   }
 }
 .nav {
   padding: 40px 15px;
+  @media (min-width: 650px) {
+    padding: 40px 30px;
+  }
+  & ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (min-width: 650px) {
+      margin-top: 30px;
+    }
+    @media (min-width: 1100px) {
+      justify-content: flex-start;
+    }
+  }
   &__liste {
     @include btn_secondary($background_color_secondary);
+    width: 100%;
     margin-left: 10px;
+    @media (min-width: 650px) {
+      width: 75%;
+    }
+    @media (min-width: 1100px) {
+      width: 300px;
+      margin-left: 25px;
+    }
     & p {
       font-weight: bold;
     }
@@ -119,16 +148,32 @@ header {
   }
 }
 .resto {
-  display: flex;
-  flex-direction: column;
   padding: 40px 15px;
   background-color: $background_color_secondary;
+  @media (min-width: 650px) {
+    padding: 40px 30px;
+  }
+  &__align {
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: 650px) {
+      justify-content: space-between;
+    }
+  }
   &__vignette {
     @include shadow(10px);
     height: 250px;
     margin-bottom: 15px;
     overflow: hidden;
     border-radius: 20px;
+    width: 100%;
+    @media (min-width: 650px) {
+      width: 48.5%;
+      margin: 10px 0;
+    }
+    @media (min-width: 1100px) {
+      width: 23.5%;
+    }
   }
   &__img_palette {
     @include image_vignette(url(../images/restaurants/la_palette_du_gout.jpg));
@@ -166,6 +211,9 @@ footer {
   flex-direction: column;
   background-color: $background_color_quaternary;
   padding: 20px 15px;
+  @media (min-width: 650px) {
+    padding: 20px 30px;
+  }
   & * {
     color: $background_color_txt;
     padding-bottom: 5px;
@@ -184,18 +232,43 @@ footer {
   &--francaise {
     @include image_page(url(../images/restaurants/a_la_francaise.jpg));
   }
+  &--palette {
+    @include image_page(url(../images/restaurants/la_palette_du_gout.jpg));
+  }
+  &--delice {
+    @include image_page(url(../images/restaurants/le_delice_des_sens.jpg));
+  }
+  &--enchantee {
+    @include image_page(url(../images/restaurants/la_note_enchantee.jpg))
+  }
 }
 .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
   background-color: $background_color_secondary;
   border-radius: 30px 30px 0 0;
   margin-top: -40px;
   padding: 30px 15px;
+  @media (min-width: 650px) {
+    padding: 30px;
+  }
+  @media (min-width: 1100px) {
+    flex-direction: row;
+  }
   &__titre {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  & .heart {
+    width: 100%;
+    & .heart {
       margin-right: 28px;
+    }
+  }
+  &__etape {
+    @media (min-width: 1100px) {
+      width: 32%;
     }
   }
   & h2 {
@@ -213,16 +286,27 @@ footer {
     display: flex;
     justify-content: center;
     margin: 50px 0;
+    width: 100%;
     &--btn {
       @include btn_primary(175px);
       border: none;
+      &:hover{
+      @include hover_btn;
+      }
     }
   }
 }
-.assiette{
+.assiette {
   @include btn_secondary($background_color_primary);
   justify-content: space-between;
   overflow: hidden;
+  animation: rolling 1000ms;
+  animation-fill-mode: both;
+  @for $var from 1 to 11 {
+    &--#{$var} {
+      animation-delay: 100ms * $var;
+    }
+  }
   &__choix {
     display: flex;
     justify-content: space-between;
@@ -241,7 +325,7 @@ footer {
       }
     }
   }
-  &__valider{
+  &__valider {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,17 +333,17 @@ footer {
     height: 100%;
     background-color: #99e2d0;
     transform: translateX(25px);
-    & i{
+    & i {
       color: white;
       font-size: 1.5em;
     }
   }
-  &:hover{
-    & .assiette__valider{
+  &:hover {
+    & .assiette__valider {
       animation: coulisse 750ms;
       animation-fill-mode: both;
     }
-    & i{
+    & i {
       animation: valider 750ms 75ms;
       animation-fill-mode: both;
     }

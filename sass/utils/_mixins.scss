@@ -45,3 +45,7 @@
   background-color: $variable;
   @include shadow (10px);
 }
+@mixin hover_btn {
+  background: linear-gradient($color_secondary_lighten, $color_primary_lighten);
+  box-shadow: 0 0 10px #585858;
+}
