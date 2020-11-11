@@ -1,0 +1,33 @@
+header {
+  @include center;
+  justify-content: space-between;
+  height: 60px;
+  & a,
+  div {
+    @include center;
+    height: 100%;
+    width: 60px;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $background_color_quaternary;
+  padding: 20px 15px;
+  @media (min-width: 650px) {
+    padding: 20px 30px;
+  }
+  & * {
+    color: $background_color_txt;
+    padding-bottom: 5px;
+  }
+  & .logo {
+    font-weight: normal;
+    padding-bottom: 15px;
+  }
+  & i {
+    width: 20px;
+    margin-right: 5px;
+  }
+}

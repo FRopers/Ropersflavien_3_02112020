@@ -1,0 +1,160 @@
+.localisation {
+  background-color: $background_color_tertiary;
+  width: 100%;
+  overflow: hidden;
+  &__ombrage {
+    height: 0.1px;
+    @include shadow(4px);
+  }
+  &__information {
+    @include center;
+    padding: 10px 0;
+    & div {
+      display: flex;
+      align-items: center;
+      width: 196px;
+    }
+    & i {
+      margin-right: 20px;
+    }
+  }
+}
+.reserve {
+  @include center;
+  flex-direction: column;
+  background-color: $background_color_secondary;
+  padding: 30px 0 50px;
+  & h2 {
+    text-align: center;
+    width: 65%;
+  }
+  & p {
+    margin-bottom: 25px;
+    text-align: center;
+    width: 85%;
+  }
+  & a {
+    @include btn_primary(200px);
+    &:hover {
+      @include hover_btn;
+    }
+  }
+}
+.nav {
+  padding: 40px 15px;
+  @media (min-width: 650px) {
+    padding: 40px 30px;
+  }
+  & ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (min-width: 650px) {
+      margin-top: 30px;
+    }
+    @media (min-width: 1100px) {
+      justify-content: flex-start;
+    }
+  }
+  &__liste {
+    @include btn_secondary($background_color_secondary);
+    width: 100%;
+    margin-left: 10px;
+    @media (min-width: 650px) {
+      width: 75%;
+    }
+    @media (min-width: 1100px) {
+      width: 300px;
+      margin-left: 25px;
+    }
+    & p {
+      font-weight: bold;
+    }
+    &:hover {
+      background-color: lighten($color_primary, 35%);
+      & i {
+        color: $color_primary;
+      }
+    }
+  }
+  &__numero {
+    @include center;
+    background-color: $color_primary;
+    color: $background_color_txt;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin-left: -10px;
+    font-size: 0.75em;
+  }
+  & i {
+    margin: 0 20px;
+    color: $background_color_icone_nav;
+    width: 18px;
+  }
+  &__phone {
+    font-size: 1.3em;
+  }
+}
+.resto {
+  padding: 40px 15px;
+  background-color: $background_color_secondary;
+  @media (min-width: 650px) {
+    padding: 40px 30px;
+  }
+  &__align {
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: 650px) {
+      justify-content: space-between;
+    }
+  }
+  &__vignette {
+    @include shadow(10px);
+    height: 250px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+    @media (min-width: 650px) {
+      width: 48.5%;
+      margin: 10px 0;
+    }
+    @media (min-width: 1100px) {
+      width: 23.5%;
+    }
+  }
+  &__img_palette {
+    @include image_vignette(url(../images/restaurants/la_palette_du_gout.jpg));
+    & p {
+      @include center;
+      @include new;
+    }
+  }
+  &__img_enchantee {
+    @include image_vignette(url(../images/restaurants/la_note_enchantee.jpg));
+    & p {
+      @include center;
+      @include new;
+    }
+  }
+  &__img_francaise {
+    @include image_vignette(url(../images/restaurants/a_la_francaise.jpg));
+  }
+  &__img_delice {
+    @include image_vignette(url(../images/restaurants/le_delice_des_sens.jpg));
+  }
+  &__descriptif {
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    background-color: $background_color_primary;
+    & a{
+      padding: 17px 0 0 17px;
+      width: 100%;
+    }
+    & .heart{
+      padding: 21px 25px 0 0;
+    }
+  }
+}

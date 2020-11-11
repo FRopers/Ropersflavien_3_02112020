@@ -1,0 +1,121 @@
+.fond {
+  &--francaise {
+    @include image_page(url(../images/restaurants/a_la_francaise.jpg));
+  }
+  &--palette {
+    @include image_page(url(../images/restaurants/la_palette_du_gout.jpg));
+  }
+  &--delice {
+    @include image_page(url(../images/restaurants/le_delice_des_sens.jpg));
+  }
+  &--enchantee {
+    @include image_page(url(../images/restaurants/la_note_enchantee.jpg));
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: $background_color_secondary;
+  border-radius: 30px 30px 0 0;
+  margin-top: -40px;
+  padding: 30px 15px;
+  @media (min-width: 650px) {
+    padding: 30px;
+  }
+  @media (min-width: 1100px) {
+    flex-direction: row;
+  }
+  &__titre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    & .heart {
+      margin-right: 28px;
+    }
+  }
+  &__etape {
+    @media (min-width: 1100px) {
+      width: 32%;
+    }
+  }
+  & h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 35px 0 5px 0;
+  }
+  &__underline {
+    height: 3px;
+    width: 45px;
+    margin-bottom: 20px;
+    background-color: $color_tertiary;
+  }
+  &__commander {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    width: 100%;
+    &--btn {
+      @include btn_primary(175px);
+      border: none;
+      &:hover {
+        @include hover_btn;
+      }
+    }
+  }
+}
+.assiette {
+  @include btn_secondary($background_color_primary);
+  justify-content: space-between;
+  overflow: hidden;
+  animation: rolling 1000ms;
+  animation-fill-mode: both;
+  @for $var from 1 to 11 {
+    &--#{$var} {
+      animation-delay: 100ms * $var;
+    }
+  }
+  &__choix {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+    &--rogner {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    &--prix {
+      display: flex;
+      align-items: flex-end;
+      & p {
+        font-weight: bold;
+      }
+    }
+  }
+  &__valider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 100%;
+    background-color: #99e2d0;
+    transform: translateX(25px);
+    & i {
+      color: white;
+      font-size: 1.5em;
+    }
+  }
+  &:hover {
+    & .assiette__valider {
+      animation: coulisse 750ms;
+      animation-fill-mode: both;
+    }
+    & i {
+      animation: valider 750ms 75ms;
+      animation-fill-mode: both;
+    }
+  }
+}

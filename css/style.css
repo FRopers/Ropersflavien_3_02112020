@@ -1,7 +1,6 @@
-@charset "UTF-8";
+/*heart*/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-/*heart*/
 @keyframes heart {
   0% {
     transform: scale(0);
@@ -40,6 +39,41 @@
     opacity: 1;
   }
 }
+/*loader*/
+@keyframes load {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1) translateX(5%);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  85% {
+    transform: translateX(5%);
+  }
+  90% {
+    transform: translateX(-5%);
+  }
+  95% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-9999px);
+  }
+}
+@keyframes corps {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -63,6 +97,7 @@ h2 {
 }
 
 h3 {
+  font-size: 1.05em;
   margin-bottom: 5px;
 }
 
@@ -97,6 +132,30 @@ header div {
   align-items: center;
   height: 100%;
   width: 60px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding: 20px 15px;
+}
+@media (min-width: 650px) {
+  footer {
+    padding: 20px 30px;
+  }
+}
+footer * {
+  color: #fff;
+  padding-bottom: 5px;
+}
+footer .logo {
+  font-weight: normal;
+  padding-bottom: 15px;
+}
+footer i {
+  width: 20px;
+  margin-right: 5px;
 }
 
 .localisation {
@@ -220,6 +279,7 @@ header div {
   width: 20px;
   border-radius: 20px;
   margin-left: -10px;
+  font-size: 0.75em;
 }
 .nav i {
   margin: 0 20px;
@@ -323,39 +383,16 @@ header div {
   height: 30%;
   display: flex;
   justify-content: space-between;
-  padding: 12px 20px 0px 12px;
   background-color: #fff;
 }
-.resto__descriptif__heart {
-  border: 1px solid black;
+.resto__descriptif a {
+  padding: 17px 0 0 17px;
+  width: 100%;
+}
+.resto__descriptif .heart {
+  padding: 21px 25px 0 0;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  background-color: #353535;
-  padding: 20px 15px;
-}
-@media (min-width: 650px) {
-  footer {
-    padding: 20px 30px;
-  }
-}
-footer * {
-  color: #fff;
-  padding-bottom: 5px;
-}
-footer .logo {
-  font-weight: normal;
-  /*verifé*/
-  padding-bottom: 15px;
-}
-footer i {
-  width: 20px;
-  margin-right: 5px;
-}
-
-/*page menu*/
 .fond--francaise {
   height: 250px;
   background: url(../images/restaurants/a_la_francaise.jpg) no-repeat center;
@@ -530,7 +567,7 @@ footer i {
 
 /*animation*/
 .heart {
-  width: 29px;
+  width: 34px;
   height: 28px;
   position: relative;
 }
@@ -553,6 +590,22 @@ footer i {
 .heart:hover .heart__2 {
   display: block !important;
   animation: heart 1000ms;
+}
+
+/*loader*/
+.accueil {
+  animation: corps 1600ms;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -51px;
+  margin-top: -62.5px;
+  font-size: 8em;
+  transform: scale(0);
+  animation: load 1500ms both;
 }
 
 /*# sourceMappingURL=style.css.map */
