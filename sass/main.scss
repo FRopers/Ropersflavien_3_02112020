@@ -2,48 +2,7 @@
 @import "./utils/mixins";
 @import "./utils/keyframes";
 @import "./base/base";
+@import "./components/heart";
 @import "./layouts/layouts";
 @import "./pages/accueil";
 @import "./pages/menu";
-/*animation*/
-.heart {
-  width: 34px;
-  height: 28px;
-  position: relative;
-  & .fa-heart {
-    font-size: 1.8em;
-  }
-  &__1 {
-    position: absolute;
-  }
-  &__2 {
-    position: absolute;
-    background: -webkit-linear-gradient(#9356dc, #ff79da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: none !important;
-  }
-  &:hover .heart__1 {
-    display: none !important;
-  }
-  &:hover .heart__2 {
-    display: block !important;
-    animation: heart 1000ms;
-  }
-}
-/*loader*/
-.accueil {
-  animation: corps 1600ms;
-}
-.loading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -51px;
-  margin-top: -62.5px;
-  font-size: 8em;
-  transform: scale(0);
-  animation: load 1500ms both;
-}
-
-
