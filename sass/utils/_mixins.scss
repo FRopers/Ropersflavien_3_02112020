@@ -1,19 +1,27 @@
 @mixin shadow($variable) {
   box-shadow: 0 0 $variable #7e7e7e;
 }
-@mixin center {
+@mixin btn_primary($variable) {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient($color_secondary, $color_primary);
+  height: 45px;
+  width: $variable;
+  border-radius: 22px;
+  color: $background_color_txt;
+  @include shadow(10px);
 }
-@mixin new {
-  height: 15%;
-  width: 80px;
-  background-color: $color_tertiary;
-  color: darken($color_tertiary, 40%);
-  font-weight: bold;
-  margin: 15px 15px 0 0;
-  border-radius: 3px;
+@mixin hover_btn_primary {
+  background: linear-gradient($color_secondary_lighten, $color_primary_lighten);
+  box-shadow: 0 0 10px #585858;
+}
+@mixin btn_secondary($variable) {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background-color: $variable;
+  @include shadow(10px);
 }
 @mixin image_vignette($variable) {
   height: 70%;
@@ -27,25 +35,13 @@
   background: $variable no-repeat center;
   background-size: cover;
 }
-@mixin btn_primary($variable) {
-  background: linear-gradient($color_secondary, $color_primary);
-  height: 45px;
-  width: $variable;
-  border-radius: 22px;
-  color: $background_color_txt;
-  @include shadow(10px);
-  @include center;
+@mixin new {
+  height: 15%;
+  width: 80px;
+  background-color: $color_tertiary;
+  color: darken($color_tertiary, 40%);
+  font-weight: bold;
+  margin: 15px 15px 0 0;
+  border-radius: 3px;
 }
-@mixin btn_secondary($variable) {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  background-color: $variable;
-  @include shadow(10px);
-}
-@mixin hover_btn {
-  background: linear-gradient($color_secondary_lighten, $color_primary_lighten);
-  box-shadow: 0 0 10px #585858;
-}
+

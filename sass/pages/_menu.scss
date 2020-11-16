@@ -1,14 +1,17 @@
+.arrow {
+  font-size: 1.3em;
+}
 .fond {
-  &--francaise {
+  &_francaise {
     @include image_page(url(../images/restaurants/a_la_francaise.jpg));
   }
-  &--palette {
+  &_palette {
     @include image_page(url(../images/restaurants/la_palette_du_gout.jpg));
   }
-  &--delice {
+  &_delice {
     @include image_page(url(../images/restaurants/le_delice_des_sens.jpg));
   }
-  &--enchantee {
+  &_enchantee {
     @include image_page(url(../images/restaurants/la_note_enchantee.jpg));
   }
 }
@@ -16,7 +19,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-wrap: wrap;
   background-color: $background_color_secondary;
   border-radius: 30px 30px 0 0;
   margin-top: -40px;
@@ -24,8 +26,9 @@
   @media (min-width: 650px) {
     padding: 30px;
   }
-  @media (min-width: 1100px) {
+  @media (min-width: 1170px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   &__titre {
     display: flex;
@@ -33,11 +36,14 @@
     justify-content: space-between;
     width: 100%;
     & .heart {
-      margin-right: 28px;
+      margin-right: 25px;
+      @media (max-width: 374px){
+        margin-right: 17px;
+      }
     }
   }
   &__etape {
-    @media (min-width: 1100px) {
+    @media (min-width: 1170px) {
       width: 32%;
     }
   }
@@ -61,7 +67,7 @@
       @include btn_primary(175px);
       border: none;
       &:hover {
-        @include hover_btn;
+        @include hover_btn_primary;
       }
     }
   }
@@ -80,8 +86,14 @@
   &__choix {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
     width: 100%;
+    @media (max-width: 374px){
+      font-size: 0.8em;
+    }
+    & div:first-child {
+      min-width: 0; /*important pour animation*/
+      padding: 10px 0 10px 10px;
+    }
     &--rogner {
       overflow: hidden;
       white-space: nowrap;
@@ -92,6 +104,10 @@
       align-items: flex-end;
       & p {
         font-weight: bold;
+        padding: 0 10px 9px 5px;
+        @media (max-width: 374px){
+          padding: 0 5px 13px 5px;
+        }
       }
     }
   }

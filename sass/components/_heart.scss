@@ -1,0 +1,27 @@
+/*coeur*/
+.heart {
+    width: 30px;
+    height: 28px;
+    position: relative;
+    & .fa-heart {
+      font-size: 1.8em;
+      width: 30px;
+    }
+    &__1 {
+      position: absolute;
+    }
+    &__2 {
+      position: absolute;
+      background: -webkit-linear-gradient(#9356dc, #ff79da);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: none !important;
+    }
+    &:hover .heart__1 {
+      display: none !important;
+    }
+    &:hover .heart__2 {
+      display: block !important;
+      animation: heart 1000ms;
+    }
+  }

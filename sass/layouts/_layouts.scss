@@ -1,10 +1,14 @@
 header {
-  @include center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   justify-content: space-between;
   height: 60px;
   & a,
   div {
-    @include center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 60px;
   }
